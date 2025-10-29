@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# OS files
+.DS_Store
+
+# Local DB/Artifacts
+classroom_clone.db
+*.sqlite3
+
+# Test/coverage artifacts
+.pytest_cache/
+htmlcov/
+coverage.xml
+.coverage*
+
+# Qt build artifacts
+*.qmlc
+*.jsc
+
+# Logs
+*.log
+
+# Editor/project files
+*.code-workspace
+.vscode/
+.idea/

@@ -1,0 +1,223 @@
+/* 
+ * Minimalist Light Theme for Google Classroom Clone
+ * Color Palette:
+ *   Accent: #4A90E2 (Professional Blue)
+ *   Background: #FFFFFF
+ *   Component Background: #F8F9FA
+ *   Input Background: #FFFFFF
+ *   Text Primary: #1A1A1A
+ *   Text Secondary: #6B7280
+ *   Border: #E5E7EB
+ */
+
+QWidget {
+    font-family: "Inter", "Segoe UI", "sans-serif";
+    color: #1A1A1A;
+    background-color: #FFFFFF;
+    font-size: 14px;
+}
+
+/* Typography */
+QLabel[class="heading-1"] {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1A1A1A;
+}
+
+QLabel[class="heading-2"] {
+    font-size: 20px;
+    font-weight: 500;
+    color: #6B7280;
+}
+
+QLabel[class="heading-3"] {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1A1A1A;
+}
+
+QLabel[class="body"] {
+    font-size: 14px;
+    color: #1A1A1A;
+}
+
+QLabel[class="caption"] {
+    font-size: 12px;
+    color: #6B7280;
+}
+
+/* Cards and containers */
+#LoginCard, QFrame#PostBox, QFrame#AnnouncementCard {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+}
+
+QFrame#AssignmentItem {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    margin: 2px 0px;
+}
+
+QFrame#AssignmentItem:hover {
+    background-color: #F8F9FA;
+    border-color: #4A90E2;
+}
+
+QLabel {
+    background-color: transparent;
+}
+
+QLineEdit, QTextEdit {
+    background-color: #FFFFFF;
+    color: #1A1A1A;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 14px;
+    selection-background-color: #4A90E2;
+}
+
+QLineEdit:focus, QTextEdit:focus {
+    border: 1px solid #4A90E2;
+    background-color: #F8F9FA;
+}
+
+QLineEdit:hover, QTextEdit:hover {
+    border-color: #9CA3AF;
+}
+
+QPushButton {
+    background-color: #F3F4F6;
+    color: #1A1A1A;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    min-height: 20px;
+}
+
+QPushButton:hover {
+    background-color: #E5E7EB;
+    border-color: #9CA3AF;
+}
+
+QPushButton:pressed {
+    background-color: #D1D5DB;
+}
+
+/* Button variants */
+QPushButton[class="primary"] {
+    background-color: #4A90E2;
+    border-color: #4A90E2;
+    color: #FFFFFF;
+}
+
+QPushButton[class="primary"]:hover {
+    background-color: #5A9FE2;
+    border-color: #5A9FE2;
+}
+
+QPushButton[class="secondary"] {
+    background-color: transparent;
+    border-color: #E5E7EB;
+    color: #6B7280;
+}
+
+QPushButton[class="secondary"]:hover {
+    background-color: #F8F9FA;
+    border-color: #9CA3AF;
+    color: #1A1A1A;
+}
+
+QPushButton[class="ghost"] {
+    background-color: transparent;
+    border: none;
+    color: #4A90E2;
+    padding: 8px 12px;
+}
+
+QPushButton[class="ghost"]:hover {
+    background-color: #F8F9FA;
+    color: #5A9FE2;
+}
+
+/* Sidebar */
+#Sidebar {
+    background-color: #F8F9FA;
+    border-right: 1px solid #E5E7EB;
+    padding: 16px 0px;
+}
+
+QPushButton#SidebarButton {
+    background-color: transparent;
+    color: #6B7280;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 2px 8px;
+}
+
+QPushButton#SidebarButton:hover {
+    background-color: #E5E7EB;
+    color: #1A1A1A;
+}
+
+QPushButton#SidebarButton:checked {
+    background-color: #4A90E2;
+    color: #FFFFFF;
+}
+
+/* Class Cards */
+#ClassCard {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+#ClassCard:hover {
+    background-color: #F8F9FA;
+    border-color: #4A90E2;
+    transform: translateY(-1px);
+}
+
+#CardTitleLabel {
+    color: #1A1A1A;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#CardSubtitleLabel {
+    color: #6B7280;
+    font-size: 12px;
+}
+
+/* Legacy button styles for compatibility */
+QPushButton#AccentButton, QPushButton[text="Log In"], QPushButton[text="Sign Up"], QPushButton[text="Turn In"] {
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    border: 1px solid #4A90E2;
+}
+
+QPushButton#AccentButton:hover, QPushButton[text="Log In"]:hover, QPushButton[text="Sign Up"]:hover, QPushButton[text="Turn In"]:hover {
+    background-color: #5A9FE2;
+    border-color: #5A9FE2;
+}
+
+QPushButton#LinkButton {
+    background-color: transparent;
+    color: #4A90E2;
+    border: none;
+    text-decoration: underline;
+}
+
+QPushButton#LinkButton:hover {
+    color: #5A9FE2;
+    background-color: #F8F9FA;
+}

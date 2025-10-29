@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    env:
+      QT_QPA_PLATFORM: offscreen
+      PYTHONUNBUFFERED: "1"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: Install system deps
+        run: sudo apt-get update && sudo apt-get install -y xvfb
+
+      - name: Install project dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install -r test_requirements.txt
+
+      - name: Run shard 1 (models + controllers) with coverage append disabled gate
+        run: |
+          xvfb-run -a python -m pytest \
+            tests/test_models.py tests/test_controllers.py \
+            -v --tb=short \
+            --cov=. --cov-report=term-missing --cov-report=xml:coverage.xml \
+            --cov-fail-under=0
+
+      - name: Run shard 2 (ui + integration) and enforce coverage
+        run: |
+          xvfb-run -a python -m pytest \
+            tests/test_ui_components.py tests/test_integration.py \
+            -v --tb=short \
+            --cov=. --cov-append --cov-report=term-missing \
+            --cov-report=xml:coverage.xml --cov-report=html \
+            --cov-fail-under=100
+
+      - name: Upload coverage (HTML)
+        uses: actions/upload-artifact@v4
+        with:
+          name: htmlcov
+          path: htmlcov/
+
+      - name: Upload coverage.xml
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-xml
+          path: coverage.xml
