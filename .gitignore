@@ -1,36 +1,38 @@
 # Python
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
-*.so
+*$py.class
 
-# Virtual environments
-.venv/
+# Environments
 venv/
-ENV/
+.venv/
+.env
+.env.*
+.python-version
 
-# OS files
+# OS / Editor
 .DS_Store
+.idea/
+.vscode/
 
-# Local DB/Artifacts
-classroom_clone.db
-*.sqlite3
+# Build / Dist
+build/
+dist/
+*.egg-info/
+.eggs/
 
-# Test/coverage artifacts
+# Testing / Coverage
 .pytest_cache/
+.coverage
+.coverage.*
 htmlcov/
-coverage.xml
-.coverage*
+.cache/
+.mypy_cache/
 
-# Qt build artifacts
+# Databases & app artifacts
+*.db
+classroom_clone.db
+
+# Qt / PySide artifacts
 *.qmlc
 *.jsc
-
-# Logs
-*.log
-
-# Editor/project files
-*.code-workspace
-.vscode/
-.idea/

@@ -1,0 +1,10 @@
+* text=auto eol=lf
+
+# Ensure consistent line endings for common text files
+*.py text eol=lf
+*.qss text eol=lf
+*.md  text eol=lf
+*.ini text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.txt text eol=lf
